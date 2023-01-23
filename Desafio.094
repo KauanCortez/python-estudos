@@ -1,0 +1,45 @@
+cadastro = {}
+perfis = []
+
+tot_idade = 0
+while True:
+    cadastro['nome'] = str(input('Nome: ')).strip().title()
+    while True:
+        cadastro['sexo'] = str(input('Sexo (M/F): ')).strip().upper()
+        if cadastro['sexo'][0] in 'MF':
+            break    
+        else:
+            print('\033[31mERRO!\033[m Por favor, digite somente M ou F!')
+    cadastro['idade'] = int(input('Idade: '))
+    perfis.append(cadastro.copy())
+    tot_idade += cadastro['idade']
+    while True:
+        perg = str(input('Deseja continuar? (S/N): ')).strip().upper()
+        if perg[0] in 'SN':
+            break
+        else:
+            print('\033[31mERRO!\033[m Responda somente S ou N!')
+    if perg[0] == 'N':
+        break
+        
+media = tot_idade / len(perfis)
+
+print('-=' * 25)        
+print(f'A) Ao todo temos {len(perfis)} pessoa(s) cadastrada(s).')
+print(f'B) A média de idade é de {media :5.2f} anos.')
+print(f'C) As mulheres cadastradas foram ') 
+for p in perfis:
+    if p['sexo'] == 'F':
+        print(f'  - {p["nome"]}. ')
+        
+print(f'D) Lista de pessoas que estão acima da média:')  
+for p in perfis:
+    if p['idade'] >= media:
+        print('  ', end = '')
+        for k, v in p.items():
+            print(f'{k} = {v};  ', end = '')
+        print('  ')
+
+print('  ')        
+print('<< ENCERRADO >>')       
+         

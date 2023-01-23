@@ -1,0 +1,28 @@
+from lib.interface import *
+from lib.arquivo import *
+from time import sleep
+
+arq = 'cursoemvideo.txt'
+
+if not arquivoExiste(arq):
+    criarArquivo(arq) 
+    
+while True:
+    opcao = menu(['Ver pessoas cadastradas.', 'Cadastrar uma nova pessoa.', 'Sair do sistema.'])
+    if opcao == 1:
+        cabecalho('PESSOAS CADASTRADAS')
+        lerArquivo(arq)
+        sleep(0.5)
+    elif opcao == 2:
+            cabecalho('NOVO REGISTRO')   
+            nome = str(input('Nome: '))
+            idade = leiaInt('Idade: ')
+            cadastrar(arq, nome, idade)
+            sleep(0.5)         
+    elif opcao == 3:
+        print('Saindo do sistema... Até logo!')
+        sleep(1)
+        break
+    else:
+        print('\033[31mERRO: Escolha uma opção válida!\033[m')
+        

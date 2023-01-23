@@ -1,0 +1,21 @@
+print(f'\033[1;36m{" MAIOR E MENOR DE IDADE " :=^50}\033[m')
+
+from datetime import date
+ano_atual = date.today().year
+
+cont_menor = 0
+cont_maior = 0
+for n in range(1, 8):
+    ano_nascimento = int(input(f'Em que ano a {n}ª pessoa nasceu? : '))
+    if ano_atual - ano_nascimento < 18:
+        cont_menor += 1
+    else:
+        cont_maior += 1
+
+print('  ')
+print('\033[1;36m=\033[m' * 50)
+
+print(f'{cont_menor} pessoas ainda são menores de idade e {cont_maior} pessoas\nsão maiores de idade.')
+
+print('  ')
+print(f'\033[1;36m{" FIM " :=^50}\033[m')

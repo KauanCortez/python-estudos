@@ -1,0 +1,73 @@
+alunos = []
+temp = []
+
+while True:
+    temp.append(str(input('Nome e Sobrenome: ')))
+    temp.append(float(input('Nota 1: ')))
+    temp.append(float(input('Nota 2: ')))
+    alunos.append(temp[:])
+    temp.clear()
+    print('  ')
+    perg = str(input('Deseja adicionar mais um aluno? (S/N): ')).strip().upper()
+    print('  ')
+    while perg[0] not in 'SN':
+        print('  ')
+        perg = str(input('\033[31mOPÇÃO INVÁLIDA.\033[31m Deseja adiciona mais um aluno? (S/N)')).strip().upper()
+    if perg[0] == 'N':
+        break
+        
+print('-=' * 23)
+print('  ')
+print('N°     NOME       MÉDIA')  
+print('-' * 25)     
+for i, a in enumerate(alunos):
+    media = (a[1] + a[2]) / 2
+    print(f'{i + 1}      {a[0].capitalize()}       {media :>3}')
+
+print('-' * 25)
+
+while True:
+    print('  ')
+    pesquisa = str(input('Deseja saber as notas de um aluno\nem específico? (S/N): ')).strip().upper()
+    print('-=' * 23)
+    print('  ')
+    
+    while pesquisa[0] not in 'SN':
+        pesquisa = str(input('\033[31mOPÇÃO INVÁLIDA.\033[m Deseja saber as notas de\num aluno em específico? (S/N): ')).strip().upper()
+        print('-=' * 23)
+        print('  ')
+       
+    if pesquisa == 'S':
+        opcao_pesquisa= int(input('''Pesquisar nota do aluno por:
+            
+[ 1 ] Índice na tabela.
+[ 2 ] Nome do aluno. 
+      
+Escolha uma opção: '''))    
+        print('  ')        
+        if opcao_pesquisa == 1:    
+            indice_tabela = int(input('Digite o ÍNDICE da TABELA correspondente aluno: '))
+            print('-=' * 23)
+            print('  ')
+            for i, a in enumerate(alunos):
+                if i == indice_tabela - 1:
+                    print(f'''As notas do(a) aluno(a) {a[0].capitalize()} são: 
+Nota 1: {a[1]}  
+Nota 2: {a[2]}''')
+        
+        elif opcao_pesquisa == 2:
+             nome_aluno = str(input('Digite o NOME e o SOBRENOME do aluno(a): ')).capitalize()
+             print('-=' * 23)
+             print('  ')
+             for i, a in enumerate(alunos):
+                if a[0].capitalize() ==  nome_aluno:
+                    print(f'''As notas do(a) aluno(a) {a[0].capitalize()} são:
+Nota 1: {a[1]}
+Nota 2: {a[2]}''')
+                    print('  ')
+                    print('-=' * 23)            
+    else:    
+        print('Até a próxima, então!')
+        print('-' * 46)
+        break
+                

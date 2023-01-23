@@ -1,0 +1,44 @@
+valor1 = int(input(' Digite o primeiro valor: '))
+valor2 = int(input(' Digite o segundo valor: '))
+valor3 = int(input(' Digite o terceiro valor: '))
+
+#Espaço entre o cabeçalho e os valores.
+
+print('\033[1;36m-+-\033[m' *10)
+print(' ')
+
+#Verificando o maior valor.
+
+maiorvalor = valor1
+
+if valor2 > valor1 and valor2 > valor3:
+    maiorvalor = valor2
+
+if valor3 > valor1 and valor3 > valor2:
+    maiorvalor =valor3
+
+#Verificando o valor medio.
+
+valormedio = valor1
+
+if valor1 > valor2 > valor3 or valor3 > valor2 > valor1:
+    valormedio = valor2
+
+if valor1 > valor3 > valor2 or valor2 > valor3 > valor1:
+    valormedio = valor3
+
+#Verificando o menor valor.
+
+menorvalor = valor1
+
+if valor1 > valor2 > valor3 or valor2 > valor1 > valor3:
+    menorvalor = valor3
+
+if valor1 > valor3 > valor2 or valor3 > valor1 > valor2:
+    menorvalor = valor2
+
+#Apresentando e atribuindo cores aos valores na tela.
+
+print(f'\033[36m O maior valor é: \033[33m{maiorvalor} \033[m')
+print(f'\033[36m O valor médio é: \033[33m{valormedio} \033[m')
+print(f'\033[36m O menor valor é: \033[33m{menorvalor} \033[m')

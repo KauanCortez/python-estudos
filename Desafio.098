@@ -1,0 +1,47 @@
+from time import sleep
+
+
+def contador(ini = 0, fim = 0, passo = 0):
+    """
+    -> Realiza uma contagem.
+    :param: ini: Determina de qual valor a contagem iniciará.
+    :param: fim: Determina em que valor a contagem terminará.
+    :param: passo: Determina a razão entre a contagem.
+    """
+    if passo == 0:
+        passo = 1
+    if passo < 0:
+        passo *= -1
+    print('-=' * 20)
+    print(f'Contagem de {ini} até {fim} de {passo} em {passo}: ')
+    sleep(2)
+    if ini > fim:
+        while ini >= fim: 
+            print(f'{ini} ', end = '', flush = True)
+            sleep(0.5)
+            ini -= passo
+        print('FIM!')    
+    elif ini < fim:
+        while ini <= fim:
+            print(f'{ini} ', end = '', flush = True)
+            sleep(0.5)
+            ini += passo
+        print('FIM!')
+
+
+contador(1 ,10, 1)
+print('  ')
+
+contador(10, 0, 2)  
+print('  ')
+
+print('-=' * 20)
+print('Agora é a sua vez de personalizar a contagem!')
+inicio = int(input('Início: '))
+fim = int(input('Fim: '))
+passo = int(input('Passo: '))
+contador(inicio, fim, passo)  
+
+print('  ')   
+help(contador)             
+            

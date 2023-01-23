@@ -1,0 +1,7 @@
+print(f'\033[36m{" CONTADOR " :=^40}\033[m')
+
+for i in range(2, 51, 2):
+    print(i)
+    
+print('  ')
+print(f'\033[36m{" FIM " :=^40}\033[m')

@@ -1,0 +1,27 @@
+salario_inicial = float(input('\033[1;36mDigite o valor do seu salário atual: R$ \033[m'))
+
+print(' ')
+print('\033[33m=\033[m' * 40)
+print(' ')
+
+#Atribuindo valores ás porcentagens de aumento.
+
+porcentagem1 = 10
+porcentagem2 = 15
+
+#Estrutura de condição baseada no valor do salário atual.
+
+if salario_inicial > 1250.00:
+    valor_do_aumento = (salario_inicial * porcentagem1) / 100
+    salario_final = salario_inicial + valor_do_aumento
+    print(f'\033[1;36mSeu salário atual é:\033[m \033[1;33mR${salario_inicial :.2f}\033[m.')
+    print(f'\033[1;36mSeu novo salário será:\033[m \033[1;32mR${salario_final :.2f}\033[m')
+
+else:
+    if salario_inicial <= 1250.00:
+
+        valor_do_aumento = (salario_inicial * porcentagem2) / 100
+        salario_final = salario_inicial + valor_do_aumento
+
+        print(f'\033[1;36mSeu salário atual é:\033[m \033[1;32mR${salario_inicial :.2f}\033[m')
+        print(f'\033[1;36mSeu novo salário será de:\033[m \033[1;32mR${salario_final :.2f}\033[m')

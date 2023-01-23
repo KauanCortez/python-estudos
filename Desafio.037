@@ -1,0 +1,29 @@
+print(f'\033[35m{" CONVERSÃO DE NÚMEROS " :=^40}\033[m')
+
+numero_int = int(input('Digite o número inteiro: '))
+print(' ')
+
+print('''Escolha uma opção:
+
+[ 1 ] para Binário
+[ 2 ] para Octal
+[ 3 ] para Hexadecimal''')
+print(' ')
+
+opcao= int(input('Digite sua escolha: '))
+print(' ')
+print('\033[35m=\033[m' * 40)
+
+if opcao == 1:
+    print(f'O número {numero_int} no sistema BINÁRIO é: {format(numero_int, "b")}')
+elif opcao == 2:
+    print(f'O número {numero_int} no sistema OCTAL é: {format(numero_int, "o")}')
+elif opcao == 3:
+    print(f'o número {numero_int} no sistema HEXADECIMAL é: {format(numero_int, "x")}')
+else:
+    print('''Opção inválida!
+
+Você precisa escolher uma opção válida.\nPor favor, reinicie o sistema!''')
+    
+print('  ')
+print('\033[35m=\033[m' *40)

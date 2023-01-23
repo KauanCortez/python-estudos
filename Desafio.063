@@ -1,0 +1,16 @@
+print('-' * 45)
+numero_elementos = int(input('Quantos termos você deseja ver?: ')) + 1
+print('~' * 35)
+t1 = 0
+t2 = 1
+cont = 3
+print(f' \033[36m{t1}\033[m -> \033[36m{t2}\033[m', end = '')
+while cont != numero_elementos:
+    t3 = t1 + t2
+    print(f' ->\033[36m{t3}\033[m', end = '')
+    t1 = t2
+    t2 = t3
+    cont += 1
+print('-> FIM')
+print('  ')
+print('-' * 45)

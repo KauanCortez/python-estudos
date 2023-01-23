@@ -1,0 +1,24 @@
+print(f'\033[33m{" TRIÂNGULOS " :=^40} \033[m')
+
+segmento1 = float(input('\033[35mValor do primeiro segmento:\033[m '))
+segmento2 = float(input('\033[35mValor do segundo segmento:\033[m '))
+segmento3 = float(input('\033[35mValor do terceiro segmento:\033[m '))
+
+print('\033[33m-=\033[m' * 20)
+print(' ')
+
+if segmento1 < segmento2 + segmento3 and segmento2 < segmento1 + segmento3 and segmento3 < segmento1 + segmento2:
+    if segmento1 == segmento2 == segmento3:
+        tipo_triangulo = 'EQUILÁTERO'
+        print(f'\033[36mOs segmentos informados PODEM FORMAR um\ntriângulo e ele é do tipo {tipo_triangulo}.\033[m')
+    elif segmento1 != segmento2 != segmento3 != segmento1:
+        tipo_triangulo = 'ESCALENO'
+        print(f'\033[36mOs segmentos informados PODEM FORMAR um\ntriângulo e ele é do tipo {tipo_triangulo}.\033[m')
+    else:
+        tipo_triangulo = 'ISÓSCELES'
+        print(f'\033[36mOs segmentos informados PODEM FORMAR um\ntriângulo e ele é do tipo {tipo_triangulo}.\033[m')
+else:
+    print('\033[36mOs segmentos informados não PODEM FORMAR um triângulo.\033[m')
+
+print(' ')
+print('\033[33m-=\033[m' * 20)

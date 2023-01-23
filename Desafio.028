@@ -1,0 +1,55 @@
+from random import randint
+from time import sleep
+
+#Cabeçalho:
+
+print('\033[1;33m-=-\033[m' * 13)
+
+print('\033[1;36mVamos jogar um jogo?')
+print(' ')
+jogador = int(input('Digite 1 para SIM e 2 para NÃO: \033[m'))
+
+print('\033[1;33m-=-\033[m' * 13)
+
+#Ant-bug:
+if jogador < 1 or jogador > 2: #if 1
+    print(' ')
+    print('\033[1;33mEu disse 1 ou 2.')
+    print('Por favor, reinicie o jogo.\033[m] :/')
+else: #else do if 1
+
+#Parte lógica:
+    if jogador == 1: #if 2
+        print(' ')
+        print('\033[1;36mVou pensar em um número entre 1 e 5. Tente\nadivinhar...')
+        print(' ')
+
+        computador = randint(1,5)
+        palpite = int(input('Digite o seu palpite: \033[m'))
+        print(' ')
+        
+        if palpite < 1 or palpite > 5: #if 3
+            print('''\033[1;36mCara, eu disse entre 1 ou 5. :/
+
+Por favor, reinicie o jogo!\033[1;33m''')
+            print('\033[1;33m-=-\033[m' * 13)
+        else: #else do if 3
+            if palpite == computador: #if 4
+                print('\033[1;36mSua resposta está...')
+                print('\033[1;33m-=-\033[m' * 13)
+                sleep(2)
+                print(' ')
+        
+                print('\033[1;36mExata. Meus parabéns! :)\033[m')
+                print('\033[1;33m-=-\033[m' * 13)
+            else: #else do if 4
+                print('\033[1;36mSua resposta está...')
+                print('\033[1;33m-=-\033[m' * 13)
+                sleep(2)
+                print(' ')
+                print(f'\033[1;36mErrada. Eu pensei no {computador} hehe ;)\033[m')
+                print('\033[1;33m-=-\033[m' * 13)
+
+    else: #else do if 2
+        print(' ')
+        print('Espero que joguemos em um futuro próximo. :/')

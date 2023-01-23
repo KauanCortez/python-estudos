@@ -1,0 +1,44 @@
+from random import randint 
+
+print(f'\033[36m{" ADVINHAÇÃO " :=^40}\033[m')
+print('  ')
+
+print('''Sou seu computador...
+Acabei de pensar em um número entre 0 e 10.\nSerá que você consegue advinhar qual foi?''')
+print('  ')
+print('\033[36m=\033[m' * 40) 
+
+computador = randint(0, 10)
+palpite = int(input('Qual é o seu palpite?: '))
+print('  ')
+
+cont = 1
+while palpite != computador:
+    cont += 1
+    if palpite > 10:
+        print('Número inválido. Eu disse entre 0 e 10. :/')
+        palpite = int(input('Qual é o seu palpite entre 0 e 10? ;) '))
+        print('  ')
+    elif palpite < 0:
+        print('Número inválido. Eu disse entre 0 e 10. :/')
+        palpite = int(input('Qual é o seu palpite entre 0 e 10? ;) '))
+        print('  ')
+    else:
+        if palpite > computador:
+            print('É menos...Tente mais uma vez.')
+            print('  ')
+            palpite = int(input('Qual é o seu palpite?: '))
+        elif palpite < computador:
+            print('É mais... Tente mais uma vez.')
+            print('  ')
+            palpite = int(input('Qual é o seu palpite?: '))
+print(f'Você acertou.')
+
+print('  ')
+print('\033[36m=\033[m' * 40)
+
+print(f'Eu pensei no {computador} desde o começo. :) ')
+print(f'Você me venceu com {cont} tentativas. Parabéns!')
+
+print('  ')
+print(f'\033[36m{" FIM " :=^40}\033[m')

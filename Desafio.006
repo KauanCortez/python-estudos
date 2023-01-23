@@ -1,0 +1,9 @@
+n = int(input('Digite um valor: '))
+
+dob = 2 * n
+trip = 3 * n
+raiz = n ** (1/2)
+
+print(f'O dobro de {n} vale: {dob}')
+print(f'O triplo de {n } vale: {trip}')
+print(f'A raíz quadrada de {n} vale: {raiz}')

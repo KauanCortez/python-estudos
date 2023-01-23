@@ -1,0 +1,23 @@
+print(f'\033[36m{" P. A " :=^55}\033[m')
+primeiro_termo = int(input('Digite o primeiro termo: '))
+razao = int(input('Digite a razão entre os termos: '))
+print('  ')
+
+print(f'\033[33m{primeiro_termo}\033[m->', end ='')
+total = 0 #Quantidade total de termos mostrados.
+mais = 10 #Quantidade de termos escolhida pelo usúario.
+cont = 1 #Contador.
+while mais != 0:
+    total += mais
+    while cont < total:
+        pa = primeiro_termo + razao
+        primeiro_termo = pa
+        print(f' \033[33m{pa}\033[m->', end = '')
+        cont += 1
+    print('PAUSA')
+    print('  ')
+    mais = int(input('Mais quantos termos você quer ver?: '))
+    print('  ')
+print(f'Fim da progressão. Foram mostrados {total} termos.')
+print('  ')
+print(f'\n\033[36m{" FIM DO PROGRAMA " :=^55}\033[m')

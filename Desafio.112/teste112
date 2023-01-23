@@ -1,0 +1,6 @@
+from utilidadesCeV import moeda
+from utilidadesCeV import dado
+
+p = dado.leiadinheiro(('Digite o Preço: R$ '))
+moeda.resumo(p, 80, 35)
+

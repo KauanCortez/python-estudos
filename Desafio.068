@@ -1,0 +1,46 @@
+from random import randint 
+
+print('-=' * 15)
+print(f'{" VAMOS JOGAR PAR OU ÍMPAR " :=^25}')
+print('-=' * 15)
+print('  ')
+
+count = 0
+while True:
+    valor_jogador = int(input('Digite um valor: '))
+    par_impar_jogador = str(input('Par ou Ímpar? (P/I): ')).strip().upper()
+    
+    valor_computador = randint(0, 11)
+    soma = valor_jogador + valor_computador
+    resultado = soma % 2
+    
+    if resultado == 0:
+        resposta = 'P'
+        print('–' * 30) 
+        print(f'Você jogou {valor_jogador} e o computador\njogou {valor_computador}. Total de {soma} DEU PAR. ')
+        print('–' * 30)
+        if par_impar_jogador == resposta:
+            print('Você VENCEU!')
+            print('Vamos jogar novamente...')
+            print('-=' * 15)
+            count += 1
+        else:
+            print('Você PERDEU!')
+            print('-=' * 15)
+            print(f'GAME OVER! Você venceu {count} vezes.')
+            break
+    elif resultado == 1:
+        resposta = 'I'
+        print('–' * 30)
+        print(f'Você jogou {valor_jogador} e o computador\njogou {valor_computador}. Total de {soma} DEU ÍMPAR.')
+        print('–' * 30)
+        if par_impar_jogador == resposta:
+            print('Você VENCEU!')
+            print('Vamos jogar novamente...')
+            print('-=' * 15)
+            count += 1
+        else:
+            print('Você PERDEU!')
+            print('-=' * 15)
+            print(f'GAME OVER! Você venceu {count} vezes.')
+            break

@@ -1,0 +1,7 @@
+cat_op = float(input('Comprimento do cateto oposto: '))
+cat_adj = float(input('Comprimento do cateto adjacente:  '))
+
+hip = ((cat_op ** 2) + (cat_adj ** 2)) **(1/2)
+
+print('  ')
+print(f'A hipotenusa vai medir: {hip :.2f}')

@@ -1,0 +1,12 @@
+from time import sleep
+
+print(f'\033[35m{" TIMER " :=^40}\033[m')
+
+for i in range(10, -1, -1):
+    print(i)
+    sleep(1)
+    
+print('  ')
+print('\N{Fireworks}' * 5)
+print('  ')
+print('\033[35m=\033[m' * 40)

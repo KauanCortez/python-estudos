@@ -1,0 +1,36 @@
+from random import randint 
+from time import sleep 
+
+print('-' * 39)
+print(f'{" JOGA NA MEGASENA ":^39}')
+print('-' * 39)
+quant_jogos = int(input('Quantos jogos você deseja?: '))
+
+print('  ')
+print('-=' * 5, f'SORTEANDO {quant_jogos} JOGOS', '=-' * 5,)
+print('  ')
+
+jogos = []
+temp = []
+tot = 0
+while tot != quant_jogos:
+    cont = 0
+    while True:
+        num = randint(1, 60)
+        if num not in temp:
+            temp.append(num)
+            cont += 1
+        if cont == 6:
+            break
+    temp.sort()
+    jogos.append(temp[:])
+    temp.clear()
+    tot += 1
+    
+for i, j in enumerate(jogos):
+    sleep(1)
+    print(f'O jogo {i + 1} é: {j}')
+    
+print('  ')
+print('-=' * 6, f'< BOA SORTE >', '=-' * 6)     
+   

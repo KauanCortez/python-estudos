@@ -1,0 +1,15 @@
+print(f'\033[35m{" FATORIAL " :=^47}\033[m')
+num = int(input('Digite um número para ver o seu fatorial: '))
+print('  ')
+
+cont = num
+factorial = 1
+print(f'Calculando {num}!=', end =' ')
+while cont > 0:
+    print(cont, end = ' ')
+    print('x' if cont > 1 else '=', end =' ')
+    factorial *= cont
+    cont -= 1 
+print(factorial)
+print('   ')
+print(f'\033[35m{" FIM DO PROGRAMA " :=^47}\033\033[m')

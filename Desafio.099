@@ -1,0 +1,23 @@
+from time import sleep
+
+
+def maior(*num):
+    cont = maior = 0
+    print('-=' * 20)
+    print('Analisando os valores passados...')
+    for n in num:
+        print(f'{n} ', end = '', flush = True)
+        sleep(0.5)
+        cont += 1
+        if cont == 0:
+            maior = n
+        else:
+            if n > maior:
+                maior = n
+    print(f'Foram informados {cont} valores ao todo.')
+    print(f'O maior valor informado foi {maior}.')
+
+    
+maior(2, 6, 8, 9)
+maior(6)
+maior()

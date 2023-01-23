@@ -1,0 +1,30 @@
+def fatorial(n, show = False):
+    """
+    -> Calcula o fatorial de um número.
+    :param: n: O número a ser cálculado.
+    :param: show: (opcional) Decide se os cáculos serão visivéis aos usuários.
+    :return: Retorna o valor do fatorial de um número n.
+    """
+    while True:
+        perg = str(input('Deseja ver os cálculos? (S/N): ')).strip().upper()[0]
+        if perg in 'SN':
+            break
+    if perg == 'S':
+        show = True
+    print('-' * 45)
+    f = 1
+    for c in range(n, 1, -1):        
+        if show == True:
+            print(f'{c}', end = ' ')
+            if c > 2:
+                print('x', end = ' ')
+            else:
+                print('=', end = ' ')
+        f *= c
+    return f
+    
+
+print('-' * 45)
+num = int(input('Digite um número para ver o seu fatorial: '))              
+print(fatorial(num))
+help(fatorial)             

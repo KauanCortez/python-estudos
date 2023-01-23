@@ -1,0 +1,25 @@
+print(f'\033[1;34m{" NÚMEROS PRIMOS " :=^54}\033[m ')
+
+numero = int(input('Digite um número: '))
+print('  ')
+print('\033[1;34m=\033[m' * 54)
+
+total = 0
+for p in range(1, numero + 1):
+    if numero % p == 0:
+        total += 1
+        print('\033[1;33m', end=' ')
+    else:
+        print('\033[1;31m', end=' ')
+    print(f'{p}', end=' ')
+
+print(' ')
+print('\033[1;34m=\033[m' * 54)
+print(f'\n\033[mO número {numero} foi divisível {total} vezes', end=' ')
+if total == 2:
+    print(f'e portanto ele É um\nnúmero primo.')
+else:
+    print(f'e portanto ele NÃO é\num número primo.')
+    
+print('  ')
+print('\033[1;34m=\033[m' * 54)

@@ -1,0 +1,8 @@
+nome = str(input('Digite seu nome completo: '))
+
+lista = nome.split()
+
+print(' ')
+
+print(f'Seu primeiro nome é: \033[1;36m{lista[0]}\033[m.')
+print(f'Seu último nome é: \033[1;36m{lista[-1]}\033[m.')

@@ -1,0 +1,68 @@
+from random import randint
+
+#Recebendo variavéis.
+print(f'\033[35m{" JO-KEN-PÔ " :=^40}\033[m')
+print('  ')
+
+print('''Escolha a sua jogada:
+    
+[ 0 ] PEDRA
+[ 1 ] PAPEL
+[ 2 ] TESOURA
+''')
+
+escolha_jogador = int(input('Qual é a sua jogada?: '))
+
+print('  ')
+print('\033[35m=\033[m' * 40)
+
+
+#Tratando variavéis.
+item = ('PEDRA', 'PAPEL', 'TESOURA')
+escolha_computador = randint(0, 2)
+
+resultado = item[escolha_computador]
+
+#Estrutura condicional.
+
+##PEDRA
+if escolha_jogador == 0 and escolha_computador == 0:
+    print('''Empatamos... Vamos de novo? ;)''')
+elif escolha_jogador == 0 and escolha_computador == 2:
+    print(f'''Você ganhou. Eu escolhi Tesoura :(
+    
+Melhor de três? ;)''')
+elif escolha_jogador == 0 and escolha_computador == 1:
+    print(f'''Ganhei! 
+    
+Quer Revanche? :)''')
+
+
+##PAPEL
+if escolha_jogador == 1 and escolha_computador == 0:
+    print(f'''Você ganhou. Eu escolhi Pedra :(
+    
+Melhor de três? ;)''')
+elif escolha_jogador == 1 and escolha_computador == 2:
+    print(f'''Ganhei! 
+    
+Quer Revanche? :)''')
+elif escolha_jogador == 1 and escolha_computador == 1:
+    print('''Empatamos... Vamos de novo? ;)''')
+    
+    
+##TESOURA
+if escolha_jogador == 2 and escolha_computador == 0:
+    print(f'''Ganhei! 
+    
+Quer Revanche? :)''')
+elif escolha_jogador == 2 and escolha_computador == 2:
+     print('''Empatamos... Vamos de novo? ;)''')
+     
+elif escolha_jogador == 2 and escolha_computador == 1:
+    print('''Você ganhou. Eu escolhi Papel :(
+    
+Melhor de três? ;)''')
+
+print('  ')
+print('\033[35m=\033[m' * 40)

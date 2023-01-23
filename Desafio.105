@@ -1,0 +1,28 @@
+def notas(*num, sit = False):
+    """
+    -> Função para analisar notas e situações de vários alunos.
+    :param: num: Recebe uma ou mais notas de alunos.
+    :param: sit: Decide se mostrará ou não a situação da turma.
+    :return: Retorna um dicionário com as informações da turma.
+    """
+    d = {}
+    
+    d['total'] = len(num)
+    d['maior'] = max(num)
+    d['menor'] = min(num)
+    d['média'] = sum(num) / len(num)
+            
+    if sit == True:
+        if d['média'] < 5:
+            d['situação'] = 'RUIM'
+        elif 5 <= d['média'] < 7:
+            d['situção'] = 'RAZOAVÉL'
+        else:
+            d['situação'] = 'BOA' 
+    return d
+
+                                  
+resp = notas(6, 2.5, 4, sit = True )
+print(resp)
+print('  ')
+help(notas) 

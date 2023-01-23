@@ -1,0 +1,9 @@
+km = float(input('Digite a quantidade de km percorridos: '))
+dias = int(input('Digite a quantidade de dias alugados: '))
+
+valor_dias = dias * 60
+valor_km = km * 0.15
+valor_total = valor_dias + valor_km
+
+print('  ')
+print(f'Total a pagar: R${valor_total :.2f}')

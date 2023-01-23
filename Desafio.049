@@ -1,0 +1,38 @@
+print(f'\033[35m{" TABUADA " :=^40}\033[m')
+
+tipo_operação = int(input('''\033[36mQual tipo de operação você deseja ver?
+
+[ 1 ] Soma.
+[ 2 ] Subtração.
+[ 3 ] Multiplicação.
+[ 4 ] Divisão.
+
+Sua escolha:\033[m '''))
+print('  ')
+print('\033[35m=\033[m' * 40)
+numero = int(input('\033[36mA tabuada de qual número você deseja ver?:\033[m '))
+print('  ')
+print('\033[35m=\033[m' * 40)
+
+if tipo_operação == 1:
+    for s in range(1, 11):
+        print(f'\033[36m{numero} + {s} = {numero + s}\033[m')
+        
+elif tipo_operação == 2:
+    max = 11 * numero
+    for sub in range(1, max):
+        if sub >= numero and sub % numero == 0:
+            print(f'\033[36m{sub} - {numero} = {sub - numero}\033[m')
+    
+elif tipo_operação == 3:
+    for mult in range(1, 11):
+        print(f'\033[36m{numero} x {mult} = {numero * mult}\033[m')
+       
+elif tipo_operação == 4:
+    min = 1 
+    max = 11 * numero
+    for div in range(min, max):
+        if div % numero == 0:
+            print(f'\033[36m{div} ÷ {numero} = {div / numero :.0f}\033[m')
+print('  ')
+print(f'\033[35m{" FIM " :=^40}\033[m')

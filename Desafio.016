@@ -1,0 +1,7 @@
+from math import trunc
+
+n = float(input('Digite um número real: '))
+
+inteiro = trunc(n)
+print('  ')
+print(f'A porção inteira de {n} é: {inteiro}')

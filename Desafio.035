@@ -1,0 +1,13 @@
+print('\033[1;33m-=' * 20)
+
+segmento1 = float(input('\033[1;34mPrimeiro segmento:\033[m '))
+segmento2 = float(input('\033[1;34mSegundo segmento:\033[m '))
+segmento3 = float(input('\033[1;34mTerceiro segemento: \033[m'))
+
+print('\033[1;33m-=\033[m' * 20)
+print(' ')
+
+if segmento1 < segmento2 + segmento3 and segmento2 < segmento1 + segmento3 and segmento3 < segmento2 + segmento1:
+    print(f'\033[1;36mOs segmentos informados\npodem formar um triângulo.\033[m')
+else:
+    print(f'\033[1;36mOs segmentos informados NÃO\npodem formar um triângulo.\033[m')

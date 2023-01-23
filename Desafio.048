@@ -1,0 +1,12 @@
+print(f'\033[36m{" SOMA DE ÍMPARES " :=^40}\033[m')
+
+soma = 0
+cont = 0
+for s in range(1, 501, 2):
+    if s % 3 == 0:
+        cont += 1
+        soma += s
+print(f'Foram somados {cont} números e a soma total\ndeles foi {soma}.')
+
+print('  ')
+print(f'\033[36m{" FIM " :=^40}\033[m')

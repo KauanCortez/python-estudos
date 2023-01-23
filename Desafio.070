@@ -1,0 +1,30 @@
+print('–' * 40)
+print(f'{" LOJA SUPER BARATÃO " :^40}')
+print('–' * 40)
+
+total_compra = mais_mil = cont_produtos =0
+while True:
+    nome_produto = str(input('Nome do produto: ')).strip().capitalize()
+    preco_produto = float(input('Preço do produto: R$'))
+    cont_produtos += 1
+    total_compra += preco_produto
+    if preco_produto >= 1000:
+        mais_mil += 1
+    if cont_produtos == 1 or preco_produto < menor_preco:
+        nome_mais_barato = nome_produto 
+        menor_preco = preco_produto
+    print('  ')
+    continua = str(input('Quer continuar? [S/N]: ')).strip().upper()[0]
+    print('  ')
+    while continua not in 'SN':
+        continua = str(input('Quer continuar? [S/N]: ')).strip().upper()[0]
+        print('  ')
+    if continua in 'Nn':
+        print(f'{" FIM DO PROGRAMA " :–^40}')
+        print(f'O total da compra foi: R${total_compra :.2f}')
+        if mais_mil > 0:
+            print(f'Quantidade de produtos que custam\nmais de R$1000.00: {mais_mil}', end = ' ')
+            print('produto' if mais_mil <= 1 else 'produtos')
+        print(f'O produto mais barato foi: {nome_mais_barato} que\ncusta R${menor_preco :.2f}')
+        break
+    

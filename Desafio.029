@@ -1,0 +1,28 @@
+velocidade_do_individuo = int(input('\033[1;36mDigite sua velocidade em km/h: \033[m '))
+limite_de_velocidade_da_via = 80
+
+if velocidade_do_individuo > limite_de_velocidade_da_via:
+    km_acima_da_via = velocidade_do_individuo - limite_de_velocidade_da_via
+    valor_da_multa = km_acima_da_via * 7
+
+    print('\033[1;36m-=-\033[m' * 13)
+    print(' ')
+
+    print('\033[1;31mATENÇÃO! \033[m')
+    print(' ')
+
+    print(f'\033[2;33mVocê foi multado no valor de:\033[m \033[1;31mR${valor_da_multa} \033[m')
+
+    print(f'\033[2;33mRetorne ao limite de velocidade da via\ne dirija com cuidado! \033[m')
+
+    print('\033[1;36m-=-\033[m' * 13)
+
+else:
+    print('\033[1;36m-=-\033[m' * 13)
+    print(' ')
+
+    print('\033[1;32mMeus parabéns! \033[m')
+    print('\033[2mVocê esta dentro do limite da via.\nContinue com o bom exemplo\ne dirija com cuidado! :) ')
+
+print(' ')
+print('\033[1;36m-=-\033[m' * 13)

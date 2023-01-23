@@ -1,0 +1,10 @@
+numero_inteiro = int(input('\033[1;36mDigite um número: \033[m'))
+resto_da_divisao = numero_inteiro % 2
+
+print('\033[1;33m-=-\033[m' * 8)
+print(' ')
+
+if resto_da_divisao == 0:
+    print(f'\033[1;36mO número {numero_inteiro} é par.\033[m')
+else:
+    print(f'\033[1;36mO número {numero_inteiro} é ímpar.\033[m')

@@ -1,0 +1,40 @@
+print(f'\033[1;35m{" DADOS " :=^50}\033[m')
+
+total_idade = 0 #soma total das idades.
+maior_idade_masculino = 0 #Recebe a idade do homem mais velho.
+homem_mais_velho = ' ' #Recebe o nome do homem mais velho.
+cont_masculino = 0 #Conta se há um homem ou não.
+cont_feminino_menor20 = 0 #Conta quantas mulheres tem menos de 20 anos.
+for n in range(1, 5):
+    nome = str(input(f'Digite o {n}° nome: '))
+    idade = int(input('Digite a idade: '))
+    sexo = str(input('Digite o sexo: ')).strip().upper()
+    print('  ')
+    
+    total_idade += idade
+    media = total_idade / 4
+    
+    if sexo == 'MASCULINO' and idade > maior_idade_masculino:
+        maior_idade_masculino = idade
+        homem_mais_velho = nome
+        cont_masculino += 1
+    elif sexo == 'FEMININO' and idade < 20:
+        cont_feminino_menor20 += 1
+        
+
+print('  ')
+print('\033[1;35m=\033[m' * 50)
+
+print(f'A média de idade do grupo é: {media :.0f} anos.')
+if cont_masculino != 0:
+    print(f'O nome do homem mais velho é: {homem_mais_velho.capitalize()}.')
+else:
+    print('Não há homens no grupo.')
+    
+if cont_feminino_menor20 != 0:
+    print(f'A quantidade de mulheres com menos de 20 anos é: {cont_feminino_menor20}.')
+else:
+    print('Não há mulheres com menos de 20 anos.')
+
+print('  ')
+print('\033[1;35m=\033[m' * 50)

@@ -1,0 +1,6 @@
+carteira = float(input('Digite quanto dinheiro você tem: R$'))
+
+dolar_comp = carteira / 5.31
+
+print('  ')
+print(f'Com R${carteira} você pode comprar: US${dolar_comp :.2f}')

@@ -1,0 +1,12 @@
+tabela_brasileirao = ('Palmeiras', 'Flamengo', 'Internacional', 'Grêmio', 'São Paulo', 'Atlético-MG', 'Athletico-PR', 'Cruzeiro', 'Botafogo', 'Santos', 'Bahia', 'Fluminense', 'Corinthians', 'Chapecoense', 'Ceará-SC', 'Vasco da Gama', 'Sport Recife', 'América-MG', 'EC Vitória', 'Paraná')
+
+print('-=' * 25)
+print(f'\033[33mLista de times do Brasileirão:\033[m\n{tabela_brasileirao}')
+print('-=' * 25)
+print(f'\033[33mOs 5 primeiros colocados do Brasileirão são:\033[m\n{tabela_brasileirao[0:5]}')
+print('-=' * 25)
+print(f'\033[33mOs 4 últimos são:\033[m\n{tabela_brasileirao[16:]}')
+print('-=' * 25)
+print(f'\033[33mTimes em ordem alfabética:\033[m\n{sorted(tabela_brasileirao)}')
+print('-=' * 25)
+print(f'\033[33mO Chapecoense está na\033[m {tabela_brasileirao.index("Chapecoense")}° \033[33mposição.\033[m')

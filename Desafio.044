@@ -1,0 +1,61 @@
+print('{:=^40}'.format(' LOJAS CORTEZ '))
+print('  ')
+
+#Cabeçalho.
+preco_compra = float(input('Digite o valor do produto: R$'))
+forma_pagamento = int(input('''Escolha uma forma de pagamento:
+
+[ 1 ] À vista no DINHEIRO
+[ 2 ] À vista no CHEQUE
+[ 3 ] À vista no CARTÃO
+[ 4 ] PARCELADO NO CARTÃO
+
+Sua escolha: '''))
+
+print('=' * 40)
+print(' ')
+
+#Calculos de descontos e juros baseados na forma de pagamento.
+desconto_avista_dinheiro = preco_compra - (preco_compra * 10 / 100)
+desconto_avista_cheque = preco_compra -(preco_compra * 10 / 100)
+desconto_avista_cartao = preco_compra - (preco_compra * 5 / 100)
+juros_cartao = preco_compra * 20 / 100
+
+#Estrutura de condição baseada na forma de pagamento.
+if forma_pagamento == 1:#À Vista no dinheiro
+    print(f'''O valor do produto é R${preco_compra :.2f} 
+O valor final é R${desconto_avista_dinheiro :.2f} COM DESCONTO.''')
+
+elif forma_pagamento == 2:#À vista no Cheque.
+    print(f'''O valor do produto é R${preco_compra :.2f} 
+
+O valor final é R${desconto_avista_cheque :.2f} COM DESCONTO.''')
+
+elif forma_pagamento == 3:#À vista no cartão.
+    print(f'''O valor do produto é R${preco_compra :.2f}
+
+O valor final é R${desconto_avista_cartao :.2f} COM DESCONTO.''')
+
+elif forma_pagamento == 4:#Parcelado no cartão.
+    numero_parcelas = int(input('Em quantas vezes você quer parcelar?: '))
+    print(' ')
+    if numero_parcelas <= 2:
+        valor_parcelas = preco_compra / numero_parcelas
+        print(f'''Sua compra de R${preco_compra :.2f} vai custar\nR${preco_compra}
+    
+As parcelas ficarão no valor de:\n{numero_parcelas}x de R${valor_parcelas :.2f} SEM JUROS.''')
+    elif numero_parcelas >= 3:
+        preco_com_juros = preco_compra + juros_cartao
+        valor_parcelas = preco_com_juros / numero_parcelas
+        print(f'''Sua compra de R${preco_compra :.2f} vai custar:\nR${preco_com_juros :.2f}
+
+As parcelas ficarão no valor de:\n{numero_parcelas}x de R${valor_parcelas :.2f} COM JUROS.''')
+
+else:
+    print('''\033[1;31mERRO!
+
+ESCOLHA INVÁLIDA.
+REINICIE O SISTEMA!\033[m''')
+
+print(' ')
+print('=' * 40)

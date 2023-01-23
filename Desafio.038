@@ -1,0 +1,15 @@
+print(f'\033[35m{" COMPARADOR " :=^40}\033[m')
+
+primeiro_numero = int(input('Digite o primeiro número: '))
+segundo_numero = int(input('Digite o segundo número: '))
+print('\033[35m=\033[m' * 40)
+print(' ')
+
+if primeiro_numero > segundo_numero:
+    print(f'O número {primeiro_numero}  é maior.')
+elif segundo_numero > primeiro_numero:
+    print(f'O número {segundo_numero} é maior. ')
+else:
+    print('Os números são iguais.')
+
+print('\033[35m=\033[m' * 40)

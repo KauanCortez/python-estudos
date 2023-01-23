@@ -1,0 +1,23 @@
+def area(larg = 0, compri = 0):
+    """
+    -> Calcula a área de um terreno.
+    :param: larg: Recebe o valor da largura de um terreno.
+    :param: compri: Recebe o valor do comprimento de um terreno.
+    """
+    a = larg * compri
+    print('  ')
+    print(f'A área de um terreno de {larg}x{compri} é de {a}m²')
+
+
+def lin(msg):
+    tam = len(msg) +4
+    print('-' * tam)
+    print(f'  {msg}')
+    print('-' * tam)        
+
+
+lin('CONTROLE DE TERRENOS')
+larg = float(input('LARGURA (m): '))
+compri = float(input('COMPRIMENTO (m): '))
+area(larg, compri)
+help(area)

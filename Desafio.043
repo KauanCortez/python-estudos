@@ -1,0 +1,39 @@
+print(f'\033[35m{" CALCULADOR DE IMC " :=^40}\033[m')
+
+peso_usuario = float(input('\033[36mDigite o seu peso (kg):\033[m '))
+altura_usuario = float(input('\033[36mDigite a sua altura (m):\033[m '))
+
+print('\033[35m-=\033[m' * 18)
+print(' ')
+
+imc = peso_usuario / (altura_usuario ** 2)
+
+if imc < 18.5:
+    print(f'''\033[36mSeu IMC é: \033[31m{imc :.1f}\033[m
+
+\033[36mVocê está \033[31mABAIXO DO PESO\033[m \033[36mnormal.\033[m''')
+
+elif 18.5 <= imc < 25:
+    print(f'''\033[36mSeu IMC é: \033[1;32m{imc :.1f}\033[m
+
+\033[1;32mPARABÉNS!\033[m\033[36m
+Você está no \033[1;32mPESO NORMAL.\033[m''')
+
+elif 25 <= imc < 30:
+    print(f'''\033[36mSeu IMC é: \033[33m{imc :.1f}\033[m
+
+\033[36mVocê está com \033[33mSOBREPESO\033[m''')
+
+elif 30 <= imc < 40:
+    print(f'''\033[36mSeu IMC é: \033[1;33m{imc :.1f}\033[m
+
+\033[36mVocê está com \033[1;33mOBESIDADE.\033[m''')
+
+else:
+    print(f'''\033[36mSeu IMC é: \033[1;31m{imc :.1f}\033[m
+
+\033[1;31mCUIDADO!\033[m\033[36m
+Vocé está com \033[1;31mOBESIDADE MORBIDA.\033[m''')
+
+print(' ')
+print('\033[35m-=\033[m' * 18)

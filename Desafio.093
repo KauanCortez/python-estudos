@@ -1,0 +1,21 @@
+cadastro = {}
+gols = []
+
+cadastro['nome'] = str(input('Nome do Jogador: ')).strip().title()
+quant_partidas = int(input(f'Quantas partidas {cadastro["nome"]} jogou?: '))
+for i in range(0, quant_partidas):
+    gols.append(int(input(f'  Quantos gols na {i + 1}° partida?: ')))
+cadastro['gols'] = gols[:]   
+cadastro['total'] = sum(gols)
+
+print('-=' * 25)
+print(cadastro) 
+print('-=' * 25)
+for k, v in cadastro.items():
+    print(f'O campo {k} tem valor {v}.')
+print('-=' * 25)    
+print(f'O jogador {cadastro["nome"]} jogou {quant_partidas}.')
+for i, v in enumerate(gols):
+    print(f'  => Na partida {i + 1}, fez {v} gols.')
+print(f'Foi um total de {cadastro["total"]}.')    
+    

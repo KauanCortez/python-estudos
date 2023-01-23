@@ -1,0 +1,15 @@
+print(f'\033[1;34m{" P.A 2.0 " :=^40}\033[m')
+
+primeiro_termo = int(input('Digite o primeiro termo: '))
+razao = int(input('Digite a razão da progressão: '))
+limite = primeiro_termo + (10 - 1) * razao
+
+print('  ')
+print('\033[1;34m=\033[m' * 40)
+
+for pa in range(primeiro_termo, limite + 1, razao):
+    print(pa, end='->')
+    
+print('ACABOU!')
+print('  ')
+print(f'\033[1;34m{" FIM " :=^40}\033[m')

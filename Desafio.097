@@ -1,0 +1,13 @@
+def escreva(msg):
+    """
+    -> Mostra uma linha que se adapta ao tamanho da menssagem passada.
+    :param: msg: Recebe a mensagem a ser mostrada.
+    """
+    tam = len(msg) + 4
+    print('-' * tam)
+    print(f'  {msg}')
+    print('-' * tam)
+    
+    
+escreva('Kauan Cortez')    
+help(escreva)

@@ -1,0 +1,7 @@
+n = int(input('Digite um número: '))
+
+antecessor = n - 1
+sucessor = n + 1
+
+print('  ')
+print(f'O antecessor de {n} vale {antecessor} e o sucessor vale {sucessor}.')

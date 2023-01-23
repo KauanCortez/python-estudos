@@ -1,0 +1,17 @@
+from datetime import datetime
+perfil = {}
+
+perfil['nome'] = str(input('Nome: ')).strip().title()
+ano_nascimento = int(input('Ano de Nascimento: '))
+perfil['idade'] = datetime.now().year - ano_nascimento 
+perfil['ctps'] = int(input('Carteira de Trabalho (0 não tem): '))
+
+if perfil['ctps'] != 0:
+    perfil['contratação'] = int(input('Ano de Contratação: '))
+    perfil['salário'] = float(input('Salário: R$'))
+    perfil['aposentadoria'] = (perfil['contratação'] - ano_nascimento) + 35
+
+print('-=' * 20)        
+for k, v in perfil.items():
+    print(f'  - {k} tem o valor {v}.')
+    

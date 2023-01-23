@@ -1,0 +1,19 @@
+def leiaint(msg):
+    ok = False
+    valor = 0
+    while True:
+        n = str(input(msg))
+        if n.isnumeric():
+            valor = n
+            ok = True
+        else:
+            print('\033[31mERRO! Digite um número inteiro válido!\033[m')
+        if ok == True:
+            break
+    return valor
+   
+print('-' * 40)   
+n = leiaint('Digite um número inteiro: ') 
+print('  ')
+print(f'Você acabou de digitar o número {n}.')
+  

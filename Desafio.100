@@ -1,0 +1,27 @@
+from random import randint
+from time import sleep
+
+numeros = []
+
+
+def sorteia():
+    print('Sorteando 5 valores da lista: ', end = '')
+    for cont in range (0, 5):
+        n = randint(1, 10)
+        numeros.append(n)
+        print(f'{n} ', end = '', flush = True)
+        sleep(0.5)
+    print('PRONTO!')
+
+
+def somapar():
+    tot_par = 0
+    for v in numeros:
+        if v % 2 == 0:
+            tot_par += v
+    print(f'Somando os valores pares de {numeros}, temos {tot_par}.')      
+    
+          
+sorteia()
+somapar()
+                

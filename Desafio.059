@@ -1,0 +1,77 @@
+from time import sleep
+print(f'\033[36m{" MENU INTERATIVO 1.0 " :=^42}\033[m')
+primeiro_valor = int(input('Digite o 1° valor: '))
+segundo_valor = int(input('Digite o 2° valor: '))
+
+menu_opcao = 0
+while menu_opcao !=  5:
+    print('\033[36m-==\033[m' * 14)
+    print('  ')
+    menu_opcao = int(input('''[ 1 ] SOMAR
+[ 2 ] MULTIPLICAR
+[ 3 ] MAIOR
+[ 4 ] NOVOS NÚMEROS
+[ 5 ] SAIR DO PROGRAMA
+
+>>>> Qual é a sua opção?: '''))
+    print('  ')
+    print('\033[36m-==\033[m' * 14)
+    if menu_opcao == 1:#Soma.
+        print(f'A soma entre {primeiro_valor} e {segundo_valor} é {primeiro_valor + segundo_valor}')
+        print('  ')
+    elif menu_opcao == 2:#Multiplicação.
+        print(f'O produto entre {primeiro_valor} e {segundo_valor} é {primeiro_valor * segundo_valor}')
+        print('  ')
+    elif menu_opcao == 3:#Maior.
+        maior_valor = primeiro_valor
+        if segundo_valor > primeiro_valor:
+            maior_valor = segundo_valor
+        print(f'O maior valor entre {primeiro_valor} e {segundo_valor} é {maior_valor}.')
+        print('  ')
+    elif menu_opcao == 4:
+        print('''\033[31mATENÇÃO!\033[m
+
+Está opção apagará os valores salvos e\nirá adquirir novos. Deseja continuar?''')
+        print('  ')
+        escolha_usuario = str(input('Digite sua escolha [S/N]: '))
+        if escolha_usuario in 'Ss':
+            print('  ')
+            primeiro_valor = int(input('Digite o 1° valor: '))
+            segundo_valor = int(input('Digite o 2° valor: '))
+            print('  ')
+            print('Valores salvos com sucesso!')
+            print('  ')
+            print('\033[36m-==\033[m' * 14)
+
+            print(f'''Os valores salvos até agora:
+
+1° valor: {primeiro_valor}
+2° valor: {segundo_valor}''')
+            print('  ')
+        while escolha_usuario not in 'SsNn':
+            print('\033[31mOPÇÃO INVÁLIDA.\033[m')
+            print('  ')
+            escolha_usuario = str(input('Digite sua escolha [S/N]: ')).strip().upper()[0]
+            if escolha_usuario in 'Ss':
+                print('  ')
+                primeiro_valor = int(input('Digite o 1° valor: '))
+                segundo_valor = int(input('Digite o 2° valor: '))
+                print('  ')
+                print('Valores salvos com sucesso!')
+                print('  ')
+                print('\033[36m-==\033[m' * 14)
+                print(f'''Os valores salvos até agora são:
+                
+1° valor: {primeiro_valor}
+2° valor: {segundo_valor}''')
+                print('  ')
+    elif menu_opcao == 5:
+        print('Finalizando...')    
+    else:
+        print('\033[31mOPÇÃO INVÁLIDA.TENTE NOVAMENTE!\033[m')
+
+print('  ')
+sleep(2)
+print('\033[36m-==\033[m' * 14)
+print('FIM DO PROGRAMA! VOLTE SEMPRE!')
+        

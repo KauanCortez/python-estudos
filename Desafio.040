@@ -1,0 +1,31 @@
+print(f'\033[1;34m{" MÉDIA ESCOLAR " :=^40}\033[m')
+
+primeira_nota = float(input('\033[1;36mDigite a sua primeira nota:\033[m '))
+segunda_nota = float(input('\033[1;36mDigite a sua segunda nota:\033[m '))
+
+print('  ')
+print('\033[1;34m-=\033[m' * 20)
+
+media = (primeira_nota + segunda_nota) / 2
+
+if primeira_nota and segunda_nota == float or int:
+    if media < 5.0:
+        print(f'''\033[1;36mTirando {primeira_nota :.1f} e {segunda_nota :.1f}, a média do aluno é:\n\033[1;31m{media :.1f}\033[m
+
+\033[1;36mO aluno está\033[m \033[1;31mREPROVADO!\033[m''')
+    elif 5.0 <= media <= 6.9:
+        print(f'''\033[1;36mTirando {primeira_nota :.1f} e {segunda_nota :.1f}, a média do aluno é:\n\033[1;33m{media :.1f}\033[m
+
+\033[1;36mO aluno está de\033[m \033[1;33mRECUPERAÇÃO!\033[m''')
+    elif 7 <= media:
+        print(f'''\033[1;36mTirando {primeira_nota :.1f} e {segunda_nota :.1f}, a média do aluno é:\n\033[1;32m{media :.1f}\033[m
+
+\033[1;36mO aluno está\033[m \033[1;32mAPROVADO!\033[m''')
+
+    else:
+        print('''\033[1;31mERRO!
+
+Certifique-se de ter digitado os valores corretamente.\033[m''')
+
+print(' ')
+print(f'\033[1;34m{" FIM " :=^40}\033[m')

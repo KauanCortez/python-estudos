@@ -1,0 +1,14 @@
+def voto(ano_nasc):
+    from datetime import datetime
+
+    idade = datetime.now().year - ano_nasc
+    if idade < 16:
+        return f'Com {idade}: NÃO VOTA'
+    elif 16 <= idade < 18 or idade >= 65:
+        return f'Com {idade}: VOTO OPCIONAL'
+    else:
+        return f'Com {idade}: VOTO OBRIGATÓRIO'
+    
+   
+print('-' * 40)    
+print(voto(int(input('Em que ano você nasceu?: '))))
